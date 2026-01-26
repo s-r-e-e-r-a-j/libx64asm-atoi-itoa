@@ -18,18 +18,18 @@ Can be used in Linux programs, bootloaders, or kernels.
 
 ## Clone the Repository
 **Clone the repository first:**
-```Bash
+```bash
 git clone https://github.com/s-r-e-e-r-a-j/libx64asm-atoi-itoa.git
 ```
 **Navigate to the project directory:** 
-```Bash
+```bash
 cd libx64asm-atoi-itoa
 ```
 After cloning and navigating to the project directory, follow the Build Instructions section.
 
 ## Build Instructions
 Make `setup.sh` executable and run it:
-```Bash
+```bash
 chmod +x setup.sh
 ./setup.sh
 ```
@@ -55,7 +55,7 @@ chmod +x setup.sh
 
 ## Linking with the Library
 After running `setup.sh`, the library object files are created in the `build/` folder:
-```Bash
+```bash
 build/atoi64.o
 build/itoa64.o
 ```
@@ -63,14 +63,14 @@ When you build your own program, you must link these object files.
 
 Example
 
-```Bash
+```bash
 nasm -f elf64 main.asm -o main.o
 ld -o main main.o build/atoi64.o build/itoa64.o -e _start
 ```
 If your program is in another directory
 Use the path to the build/ folder:
 
-```Bash
+```bash
 nasm -f elf64 main.asm -o main.o
 ld -o main main.o \
 ../libx64asm-atoi-itoa/build/atoi64.o \
@@ -92,25 +92,25 @@ You only need to link the object file for the function you use.
 
 Using only `atoi64:`
 
-```Bash
+```bash
 ld -o program program.o build/atoi64.o -e _start
 ```
 Using only `itoa64:`
-```Bash
+```bash
 ld -o program program.o build/itoa64.o -e _start
 ```
 Using both:
-```Bash
+```bash
 ld -o program program.o build/atoi64.o build/itoa64.o -e _start
 ```
 From another directory
-```Bash
+```bash
 ld -o program program.o \
 ../libx64asm-atoi-itoa/build/atoi64.o \
 -e _start
 ```
 or
-```Bash
+```bash
 ld -o program program.o \
 ../libx64asm-atoi-itoa/build/itoa64.o \
 -e _start
@@ -118,7 +118,7 @@ ld -o program program.o \
 
 ## Example: `atoi64`
 
-```Asm
+```asm
 global _start
 extern atoi64
 
@@ -138,14 +138,14 @@ _start:
 ```
 
 **Build:**
-```Bash
+```bash
 nasm -f elf64 example_atoi.asm -o example_atoi.o
 ld -o example_atoi example_atoi.o build/atoi64.o -e _start
 ```
 
 ## Example: `itoa64`
 
-```Asm
+```asm
 global _start
 extern itoa64
 
@@ -166,7 +166,7 @@ _start:
 ```
 
 **Build:**
-```Bash
+```bash
 nasm -f elf64 example_itoa.asm -o example_itoa.o
 ld -o example_itoa example_itoa.o build/itoa64.o -e _start
 ```
