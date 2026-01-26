@@ -132,8 +132,8 @@ _start:
 
     ; rax now holds the result
 
-    mov rax, 60              ; exit syscall
-    xor rdi, rdi             ; exit code 0
+    mov rax, 60 ; exit syscall
+    xor rdi, rdi ; exit code 0
     syscall
 ```
 
