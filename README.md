@@ -123,12 +123,12 @@ global _start
 extern atoi64
 
 section .data
-    input db "-12345", 0     ; input string
+    input db "-12345", 0 ; input string
 
 section .text
 _start:
-    mov rdi, input           ; string address
-    call atoi64              ; convert to number
+    mov rdi, input ; string address
+    call atoi64 ; convert to number
 
     ; rax now holds the result
 
@@ -150,18 +150,18 @@ global _start
 extern itoa64
 
 section .bss
-    buffer resb 32           ; output buffer
+    buffer resb 32  ; output buffer
 
 section .text
 _start:
-    mov rdi, -9876           ; number to convert
-    mov rsi, buffer          ; buffer address
-    call itoa64              ; convert to string
+    mov rdi, -9876  ; number to convert
+    mov rsi, buffer ; buffer address
+    call itoa64 ; convert to string
 
-    ; buffer now has the text
+; buffer now has the text
 
-    mov rax, 60              ; exit syscall
-    xor rdi, rdi             ; exit code 0
+    mov rax, 60 ; exit syscall
+    xor rdi, rdi ; exit code 0
     syscall
 ```
 
