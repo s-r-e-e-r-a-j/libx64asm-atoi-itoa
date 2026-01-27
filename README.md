@@ -158,6 +158,8 @@ _start:
     mov rsi, buffer ; buffer address
     call itoa64 ; convert to string
 
+; RAX = length of string (excluding null byte)
+
 ; buffer now has the text
 
     mov rax, 60 ; exit syscall
