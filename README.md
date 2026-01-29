@@ -16,6 +16,11 @@ Can be used in Linux programs, bootloaders, or kernels.
 - `setup.sh` — installs NASM if missing and builds `.o` files
 - `build/` — folder for assembled object files
 
+## Architecture:
+  - amd64 (x86_64, 64-bit)
+Platform:
+  - Linux only
+
 ## Clone the Repository
 **Clone the repository first:**
 ```bash
