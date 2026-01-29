@@ -18,7 +18,7 @@ Can be used in Linux programs, bootloaders, or kernels.
 
 ## Architecture:
   - amd64 (x86_64, 64-bit)
-Platform:
+## Platform:
   - Linux only
 
 ## Clone the Repository
